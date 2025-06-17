@@ -7,7 +7,7 @@ const Registeripo = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
-    const response = await fetch(`http://localhost:3000/registeripo`, {
+    const response = await fetch(`https://ipo-hel9.onrender.com/registeripo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
