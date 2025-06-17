@@ -96,7 +96,7 @@ try {
 }
 const Forgotpass = () => {
   return (
-    <GoogleReCaptchaProvider reCaptchaKey="6LcTDlsrAAAAALU623fv7PMqAu_V7nuAblRzQ3_l">
+    <GoogleReCaptchaProvider reCaptchaKey="6LeCi2MrAAAAACyUVFgX2PfNObfoPykY8NFkeQ3j">
       <ForgotPasswordForm />
     </GoogleReCaptchaProvider>
   );
