@@ -19,7 +19,7 @@ const Login = ({setisloggedin , setusername, setmail}) => {
       return;
     }
 
-    const response = await fetch("http://localhost:3000/loginadmin", {
+    const response = await fetch("https://ipo-hel9.onrender.com/loginadmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...data, token: captchaValue }),
