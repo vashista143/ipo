@@ -98,7 +98,7 @@ app.get("/logout",(req,res)=>{
 app.post("/loginadmin",async (req,res)=>{
   try{
   const {email, password, token} =req.body 
-  const secretKey = "6LcQFlorAAAAAKYXYpnQzTahWyIZliCyAjGDLxMm"; 
+  const secretKey = "6LdCi2MrAAAAAIw2Z1xDWWN83B62Vc-C3_ZUNsoA"; 
   const params = new URLSearchParams();
   params.append("secret", secretKey);
   params.append("response", token);
@@ -135,7 +135,7 @@ app.post("/signupadmin",async (req,res)=>{
   try{
   console.log("signup hit")
   const {name, email, password, token} =req.body 
-  const secretKey = "6LcfJlwrAAAAAIX0_RrFqZCG7Zsk_CUPdTeKC-Km"; 
+  const secretKey = "6Ldyi2MrAAAAAOWoiB6cJbIfXlQWtb16qZRVAMoU"; 
   const params = new URLSearchParams();
   params.append("secret", secretKey);
   params.append("response", token);
@@ -170,7 +170,7 @@ const captchaJson = await captchaRes.json();
 })
 
 const verifyRecaptcha = async (token) => {
-  const secret ="6LcTDlsrAAAAAFKu9M9Sqh73oE9umw4eSMoMMOV_";
+  const secret ="6LeCi2MrAAAAAKjPkbMzC14eQCobXCannjX-eI0b";
   const url = `https://www.google.com/recaptcha/api/siteverify`;
 
   const res = await fetch(url, {
