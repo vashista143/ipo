@@ -18,7 +18,7 @@ const Signup = () => {
       return;
     }
 
-    const response = await fetch("http://localhost:3000/signupadmin", {
+    const response = await fetch("https://ipo-hel9.onrender.com/signupadmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...data, token: captchaValue }),
