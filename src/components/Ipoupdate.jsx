@@ -7,7 +7,7 @@ const Ipoupdate = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:3000/ipoupdate/${id}`)
+    fetch(`https://ipo-hel9.onrender.com/ipoupdate/${id}`)
       .then(res => res.json())
       .then(data => {
         setupdatedata(data)
@@ -15,7 +15,7 @@ const Ipoupdate = () => {
       })
   }, [id])
   const onsubmit = async (data) => {
-  const response = await fetch(`http://localhost:3000/ipoupdate/${id}`, {
+  const response = await fetch(`https://ipo-hel9.onrender.com/ipoupdate/${id}`, {
   method: "POST",
   headers: {
           "Content-Type": "application/json"
