@@ -22,7 +22,7 @@ const ForgotPasswordForm = () => {
     }
 try {
       const token = await executeRecaptcha('forgot_password');
-      const res = await fetch('http://localhost:3000/reset', {
+      const res = await fetch('https://ipo-hel9.onrender.com/reset', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
