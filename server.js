@@ -26,7 +26,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/callback",
+  callbackURL: "https://ipo-hel9.onrender.com/auth/google/callback",
 },
   async (accessToken, refreshToken, profile, done) => {
     try {
@@ -77,13 +77,13 @@ app.get("/auth/google/callback", passport.authenticate("google", {
   failureRedirect: "/unauthorized",
 }), (req, res) => {
   const user = req.user;
-  const frontendUrl = `http://localhost:5173/loginsuccess?name=${encodeURIComponent(user.displayName)}&email=${encodeURIComponent(user.emails[0].value)}`;
+  const frontendUrl = `https://ipo-theta.vercel.app/loginsuccess?name=${encodeURIComponent(user.displayName)}&email=${encodeURIComponent(user.emails[0].value)}`;
   console.log("signed in with Google");
   res.redirect(frontendUrl);
 });
 
 app.get("/unauthorized", (req, res) => {
-  const frontendUrl = "http://localhost:5173/access-denied";
+  const frontendUrl = "https://ipo-theta.vercel.app/access-denied";
   res.redirect(frontendUrl);
 });
 
@@ -200,7 +200,7 @@ app.post("/reset", async (req, res) => {
             return res.status(404).json({ success: false, message: "Email not found" });
         }
         
-        const resetLink = `http://localhost:5173/reset-password/${admin._id}`;
+        const resetLink = `https://ipo-theta.vercel.app/reset-password/${admin._id}`;
         await sendEmail(email, "Reset Password", `Click on the link to reset your password: ${resetLink}`);
         return res.status(200).json({ success: true, message: "Reset password link sent successfully" });
 
