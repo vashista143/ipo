@@ -5,7 +5,7 @@ const ManageIPO = ({ searchTerm }) => {
    const navigate = useNavigate();
    const [ipodata,setipodata]=useState([])
    useEffect(() => {
-    fetch("http://localhost:3000/api")
+    fetch("https://ipo-hel9.onrender.com/api")
     .then(res => res.json())
     .then(data => setipodata(data))
     .catch(err => console.error("Error fetching IPO data:", err)); 
@@ -22,13 +22,13 @@ const filteredData = ipodata.filter((ipo) =>
   const currentData = filteredData===""?ipodata.slice(startIdx, endIdx) : filteredData.slice(startIdx, endIdx);
 
   const deleteipo = (delid) => {
-    fetch(`http://localhost:3000/delete/${delid}`, { method: "DELETE" })
+    fetch(`https://ipo-hel9.onrender.com/delete/${delid}`, { method: "DELETE" })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to delete");
         return res.json();
       })
       .then(() => {
-        fetch("http://localhost:3000/api")
+        fetch("https://ipo-hel9.onrender.com/api")
           .then(res => res.json())
           .then(data => setipodata(data));
       })
