@@ -11,7 +11,7 @@ const Resetpassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const res = await fetch(`http://localhost:3000/reset-password/${id}`, {
+    const res = await fetch(`https://ipo-hel9.onrender.com/reset-password/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
