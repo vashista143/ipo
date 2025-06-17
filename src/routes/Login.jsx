@@ -110,7 +110,7 @@ const Login = ({setisloggedin , setusername, setmail}) => {
           </div>
           <ReCAPTCHA className="rounded-2xl" 
            ref={recaptchaRef}
-        sitekey="6LcQFlorAAAAAJSn4PoP8iwZB1wFYbckqpWaTOea" 
+        sitekey="6LdCi2MrAAAAANrTH37UYhRDBUh7y77pggvnk8Ku" 
         onChange={handleRecaptcha}
       />
           <div className="flex items-center space-x-2">
